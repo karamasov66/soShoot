@@ -1,0 +1,41 @@
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: blue;
+    height: 56px
+}
+
+.toolbar-logo {
+    margin-left: 1rem
+}
+
+.toolbar-nav {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem
+}
+
+.toolbar-items ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex
+}
+
+.toolbar-nav li {
+    padding: 0 0.5rem
+}
+
+@media (max-width: 768px) {
+    .toolbar-items{
+        display: none;
+    }
+}
+@media (min-width: 769px) {
+    .toolbar-toggle-button {
+        display: none;
+    }
+}

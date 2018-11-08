@@ -11,7 +11,10 @@
     },
     "devDependencies": {
         "axios": "^0.18",
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-1": "^6.24.1",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
         "jquery": "^3.2",
@@ -20,5 +23,8 @@
         "popper.js": "^1.12",
         "react": "^16.6.0",
         "react-dom": "^16.6.0"
+    },
+    "dependencies": {
+        "react-sidebar": "^3.0.2"
     }
 }
