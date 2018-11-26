@@ -16,10 +16,10 @@ class CategoriesTableSeeder extends Seeder
             'name' => 'Portrait'
         ]);
         Category::create([
-            'name' => 'Voyage'
+            'name' => 'Animal'
         ]);
         Category::create([
-            'name' => 'Street'
+            'name' => 'Landscape'
         ]);
     }
 }

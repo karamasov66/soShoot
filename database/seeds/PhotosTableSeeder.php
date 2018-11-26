@@ -16,23 +16,31 @@ class PhotosTableSeeder extends Seeder
 
         Photo::create([
             'title' => 'Un visage',
-            'url' => '/images/photoSamples/1.jpg',
-            'category_id' => 1
+            'uri' => 'photos/1.jpg',
+            'category_id' => 1,
+            'width' => 400,
+            'height' => 640
         ]);
         Photo::create([
             'title' => 'Une photo de voyage',
-            'url' => '/images/photoSamples/2.jpg',
-            'category_id' => 2
+            'uri' => 'photos/2.jpg',
+            'category_id' => 2,
+            'width' => 400,
+            'height' => 250
         ]);
         Photo::create([
             'title' => 'Une rue',
-            'url' => '/images/photoSamples/3.jpg',
-            'category_id' => 3
+            'uri' => 'photos/3.jpg',
+            'category_id' => 3,
+            'width' => 400,
+            'height' => 250
         ]);
         Photo::create([
             'title' => 'Une autre rue',
-            'url' => '/images/photoSamples/4.jpg',
-            'category_id' => 3
+            'uri' => 'photos/4.jpg',
+            'category_id' => 3,
+            'width' => 400,
+            'height' => 640
         ]);
     }
 }

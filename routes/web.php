@@ -11,6 +11,4 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('{all?}', 'AppController@index')->where('all', '([A-z\d-\/_.]+)?');

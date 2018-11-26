@@ -26,3 +26,4 @@ Route::delete('photos/{photo}', 'PhotosController@delete');
 
 //categories
 Route::get('categories', 'CategoryController@index');
+Route::get('categories/{name}', 'CategoryController@getPhotosByCategory');

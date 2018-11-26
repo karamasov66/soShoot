@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 import './Toolbar.css'
@@ -7,6 +8,23 @@ import DrawerToggleButton from '../SideDrawer/DrawerToggleButton'
 class Toolbar extends Component {
     constructor(props) {
         super(props);
+    }
+    
+    renderCategories(){
+        return this.props.categories.map(category => {
+          let path = '/'+category.name;
+
+            return (
+                <li key={category.id} >
+                    <Link
+                        to={path}
+                        className={`nav-link ${this.props.location.pathname === '/{category.name}' ? 'active' : ''}`}
+                    >
+                        {category.name}
+                    </Link>
+                </li>
+            )
+        })
     }
     
     render() {
@@ -21,12 +39,10 @@ class Toolbar extends Component {
                   </div>
                       <div className="toolbar-items">
                           <ul>
-                              <li><a href="/">Home</a></li>
-                              <li><a href="/">Landscape</a></li>
-                              <li><a href="/">Animaux</a></li>
-                              <li><a href="/">Portraits</a></li>
-                              <li><a href="/">Bio</a></li>
-                              <li><a href="/">Contact</a></li>
+                              <li><a href="#">Home</a></li>
+                              {this.renderCategories()}
+                              <li><a href="#">Bio</a></li>
+                              <li><a href="#">Contact</a></li>
                           </ul>
                       </div>
               </nav>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use function dd;
 use Illuminate\Http\Request;
+use function ucfirst;
 
 class CategoryController extends Controller
 {
@@ -14,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        return Category::all();
     }
 
     /**
@@ -47,6 +49,13 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         //
+    }
+
+    public function getPhotosByCategory($name)
+    {
+        $name = ucfirst($name);
+        $category = Category::where('name', $name)->first();
+        return $category->photos;
     }
 
     /**

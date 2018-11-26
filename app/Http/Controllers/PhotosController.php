@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Photo;
+use App\Category;
+use function dd;
 use Illuminate\Http\Request;
 
 class PhotosController extends Controller

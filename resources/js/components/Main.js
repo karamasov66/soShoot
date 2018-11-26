@@ -1,8 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import Toolbar from "./Toolbar/Toolbar";
 import SideDrawer from './SideDrawer/SideDrawer';
 import Backdrop from './Backdrop/Backdrop';
+import Landscape from './Gallery/Landscape';
+import Animal from './Gallery/Animal';
+import Portrait from './Gallery/Portrait';
 
 class Main extends Component {
     constructor() {
@@ -51,16 +55,6 @@ class Main extends Component {
         })
     }
     
-    renderCategories(){
-        return this.state.categories.map(category => {
-            return (
-                <li key={category.id} >
-                    { category.name }
-                </li>
-            )
-        })
-    }
-    
     render() {
         let backdrop;
         
@@ -69,14 +63,19 @@ class Main extends Component {
         }
         return (
             <div>
-                {backdrop}
-                <SideDrawer show={this.state.sideDrawerOpen}/>
-                <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-                <div style={{marginTop: '60px'}}>
-                    <ul>
-                     {this.renderPhotos()}
-                    </ul>
-                </div>
+                <BrowserRouter>
+                    <Fragment>
+                        {backdrop}
+                        <Route path='/' render={(props) => (
+                            <Toolbar drawerClickHandler={this.drawerToggleClickHandler} categories={this.state.categories} {...props}/>
+                        )}/>
+                        <Route exact path="/landscape" component={Landscape}/>
+                        <Route exact path="/portrait" component={Portrait}/>
+                        <Route exact path="/animal" component={Animal}/>
+                        <SideDrawer show={this.state.sideDrawerOpen}/>
+                    </Fragment>
+                </BrowserRouter>
+                
             </div>
         );
     }
